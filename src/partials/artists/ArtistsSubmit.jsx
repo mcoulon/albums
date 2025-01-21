@@ -66,7 +66,7 @@ function ArtistsSubmit() {
                                 type="text"
                                 id="name"
                                 className="border border-gray-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
-                                value={id ? artist.name : ''}
+                                value={artist?.name}
                                 onChange={(e) => {
                                     if (id) {
                                         setArtist({ ...artist, name: e.target.value })
