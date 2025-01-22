@@ -36,6 +36,7 @@ function Login() {
                 localStorage.setItem('user', JSON.stringify(response.data.data.user))
 
                 navigate('/')
+                window.location.reload()
             } else if (response.status === 401) {
                 throw new Error(response.data.message)
             }
