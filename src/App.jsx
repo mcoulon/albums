@@ -6,6 +6,10 @@ import ArtistsList from "./pages/artists/ArtistsList"
 import ArtistsForm from "./pages/artists/ArtistsForm"
 import AlbumsForm from "./pages/albums/AlbumsForm"
 import AlbumsList from "./pages/albums/AlbumsList"
+import GenresList from "./pages/genres/GenresList"
+import GenresForm from "./pages/genres/GenresForm"
+import MediaTypesList from "./pages/mediatypes/MediaTypesList"
+import MediaTypesForm from "./pages/mediatypes/MediaTypesForm"
 
 function App() {
 
@@ -21,6 +25,12 @@ function App() {
         <Route path="/albums" element={<AlbumsList />} />
         <Route path="/albums/add" element={<AlbumsForm />} />
         <Route path="/albums/edit/:id" element={<AlbumsForm />} />
+        <Route path="/genres" element={<GenresList />} />
+        <Route path="/genres/add" element={<GenresForm />} />
+        <Route path="/genres/edit/:id" element={<GenresForm />} />
+        <Route path="/mediatypes" element={<MediaTypesList />} />
+        <Route path="/mediatypes/add" element={<MediaTypesForm />} />
+        <Route path="/mediatypes/edit/:id" element={<MediaTypesForm />} />
       </Routes>
     </Router>
   )

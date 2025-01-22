@@ -12,7 +12,6 @@ function AlbumsSubmit() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        // Fetch all artists for the select dropdown
         ApiRequest.get('/artists/all')
             .then((response) => {
                 console.log(response.data)
@@ -22,7 +21,6 @@ function AlbumsSubmit() {
                 console.log(error)
             })
 
-        // If editing, fetch the album data
         if (id) {
             ApiRequest.get(`/albums/${id}`)
                 .then((response) => {
@@ -48,7 +46,6 @@ function AlbumsSubmit() {
         resolver: yupResolver(schema),
     })
 
-    // Set form values when album data is loaded
     useEffect(() => {
         if (album.id) {
             setValue('title', album.title)
