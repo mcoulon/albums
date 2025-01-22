@@ -11,19 +11,17 @@ function ArtistsSubmit() {
 
     const navigate = useNavigate()
 
-    if (id) {
-        useEffect(() => {
-            const fetchArtist = async () => {
-                try {
-                    const response = await ApiRequest.get(`/artists/${id}`)
+    useEffect(() => {
+        if (id) {
+            ApiRequest.get(`/artists/${id}`)
+                .then((response) => {
                     setArtist(response.data.data)
-                } catch (error) {
+                })
+                .catch((error) => {
                     console.log(error)
-                }
-            }
-            fetchArtist()
-        }, [id])
-    }
+                })
+        }
+    }, [id])
 
     const schema = yup.object().shape({
         name: yup.string().required("Name is required"),
